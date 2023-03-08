@@ -53,7 +53,7 @@ func (e *extractor) Extract(url string, option extractors.Options) ([]*extractor
 		return nil, errors.WithStack(extractors.ErrURLParseFailed)
 	}
 	itemId := itemIds[len(itemIds)-1]
-	jsonData, err := request.Get("https://www.iesdouyin.com/aweme/v1/web/aweme/detail/?aweme_id="+itemId+"&aid=1128&version_name=23.5.0&device_platform=android&os_version=2333", url, nil)
+	jsonData, err := request.Get("https://m.douyin.com/web/api/v2/aweme/iteminfo/?reflow_source=reflow_page&item_ids="+itemId+", url, nil)
 	if err != nil {
 		return nil, errors.WithStack(err)
 	}
